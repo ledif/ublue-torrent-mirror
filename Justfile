@@ -1,3 +1,4 @@
+# Set up the Feral Hosting server
 deploy:
   #!/bin/bash
   if [ ! -f id_ed25519_ublue_feral ]; then

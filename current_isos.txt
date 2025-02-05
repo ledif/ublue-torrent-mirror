@@ -1,0 +1,1 @@
+aurora-dx-stable.iso https://dl.getaurora.dev/aurora-dx-stable.iso 029aa13a0d40d6e9127d0102b7d984be29be9edd9b09e10ed89198c129b94bb5 

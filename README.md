@@ -1,5 +1,6 @@
 # Universal Blue Torrent Mirror
 
-## Why pyinfra over Ansible
+This project contains the infrastructure and code to manage torrent mirroring of Universal Blue ISOs. For a full list of torrents, visit https://gaia.feralhosting.com/ublue.
 
-Ansible requires that the host is running a somewhat recent version of python (i.e, EOL but not too far EOL).  `pyinfra` on the other hand only requires that the host has a POSIX-compatable shell. The VPSes in this sphere usually run very old operating systems with ancient python interpreters, which lends itself more to `pyinfra`.
+## Adding new torrents
+- Open a PR for adding a new line to `current_isos.txt`.
