@@ -31,4 +31,4 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y rclone
           echo "$SSH_KEY" > id_ed25519
-          rclone copy ./current-isos.txt FERAL:ublue-torrent-mirror/var
+          rclone copy -v ./current-isos.txt FERAL:ublue-torrent-mirror/var
