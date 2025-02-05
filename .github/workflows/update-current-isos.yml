@@ -28,12 +28,10 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y rclone
+          echo "$SSH_KEY" > id_ed25519
           rclone copy -v ./current-isos.txt FERAL:ublue-torrent-mirror/var
 
       - name: Trigger ublue-torrent-manager
         shell: bash
-        env:
-          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
-          echo "$SSH_KEY" > id_ed25519
           ssh -i id_ed25519 ublue@gaia.feralhosting.com bash -c '~/ublue-torrent-mirror/libexec/blue-torrent-manager.sh'
