@@ -8,13 +8,13 @@ Currently using a £10 / month VPS from Feral Hosting
 ## Stack
 - rtorrent to seed torrents (package provided by Feral)
 - Supervisor to ensure rtorrent is running (no `systemd --user` available on VPS)
-- `ublue-torrent-manager.py` which tracks changes in current_isos.txt and downloads ISOs / creates torrents / pushes torrent to repo
+- `ublue-torrent-manager.py` which tracks changes in `current-isos.txt` and downloads ISOs / creates torrents / pushes torrent to repo
 
 
 ## Flow for creating new torrents
-- A PR is merged which updates `current_isos.txt`
+- A PR is merged which updates `current-isos.txt`
 - The workflow `update-current-isos` runs and does the following
-  - `rclone` is called to copy the new `current_isos.txt` file to the server.
+  - `rclone` is called to copy the new `current-isos.txt` file to the server.
   - ssh is used to call `ublue-torrent-manager.py` on the server
   - `ublue-torrent-manager.py` will create a torrent and push it back to the repo
 

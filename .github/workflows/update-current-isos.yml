@@ -1,0 +1,32 @@
+name: Update Current ISO
+on:
+  push:
+    paths:
+      #- current-isos.txt
+      - '*'
+  workflow_call:
+
+jobs:
+  update-current-isos:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+
+      - name: Upload current-isos.txt
+        shell: bash
+        env:
+          RCLONE_CONFIG_FERAL_TYPE: sftp
+          RCLONE_CONFIG_FERAL_HOST: gaia.feralhosting.com
+          RCLONE_CONFIG_FERAL_USER: ublue
+          RCLONE_CONFIG_FERAL_KEY_PEM: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y rclone
+          rclone copy ./current-isos.txt FERAL:ublue-torrent-mirror/var
