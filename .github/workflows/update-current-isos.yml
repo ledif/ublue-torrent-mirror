@@ -34,4 +34,6 @@ jobs:
       - name: Trigger ublue-torrent-manager
         shell: bash
         run: |
+          mkdir -p ~/.ssh
+          cp pyinfra/known_hosts ~/.ssh/known_hosts
           ssh -i id_ed25519 ublue@gaia.feralhosting.com bash -c '~/ublue-torrent-mirror/libexec/blue-torrent-manager.sh'
