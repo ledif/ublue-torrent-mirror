@@ -25,8 +25,9 @@ jobs:
           RCLONE_CONFIG_FERAL_TYPE: sftp
           RCLONE_CONFIG_FERAL_HOST: gaia.feralhosting.com
           RCLONE_CONFIG_FERAL_USER: ublue
-          RCLONE_CONFIG_FERAL_KEY_PEM: ${{ secrets.SSH_PRIVATE_KEY }}
+          RCLONE_CONFIG_FERAL_KEY_FILE: id_ed25519
         run: |
           sudo apt-get update
           sudo apt-get install -y rclone
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > id_ed25519
           rclone copy ./current-isos.txt FERAL:ublue-torrent-mirror/var
