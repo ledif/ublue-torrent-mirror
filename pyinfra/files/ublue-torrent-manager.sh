@@ -3,4 +3,5 @@
 cd ~/ublue-torrent-mirror
 
 mise use python@3.12
-python3 ./libexec/ublue-torrent-manager.py
+pip install torf
+python3 -u ./libexec/ublue-torrent-manager.py

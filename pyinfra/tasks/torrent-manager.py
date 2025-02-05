@@ -1,10 +1,8 @@
 from pyinfra.operations import files, server
-from pyinfra.facts.server import User
 from pyinfra import host
 from pathlib import Path
 
 home = Path(host.get_fact(server.Home))
-user = host.get_fact(User)
 
 deployment_root = home / "ublue-torrent-mirror"
 
@@ -17,7 +15,7 @@ for ext in ["py", "sh"]:
     )
 
 for status in ["staged", "seeding", "trash"]:
-    iso_dir = deployment_root / "var" / "ios" / status
+    iso_dir = deployment_root / "var" / "isos" / status
     files.directory(
         name=f"Ensure the directory {iso_dir} exists",
         path=iso_dir,
