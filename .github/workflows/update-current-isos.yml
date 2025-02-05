@@ -1,8 +1,8 @@
 name: Update Current ISOs
 on:
   push:
-  #  paths:
-  #    - current-isos.txt
+    paths:
+      - current-isos.txt
   workflow_call:
 
 jobs:
