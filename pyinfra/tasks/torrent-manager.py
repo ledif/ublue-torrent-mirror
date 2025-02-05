@@ -16,10 +16,9 @@ for ext in ["py", "sh"]:
         mode="755",
     )
 
-path_to_shim = deployment_root / "libexec" / "ublue-torrent-manager.sh"
-server.crontab(
-    name="Run ublue-torrent-mirror every 5 minutes",
-    user=user,
-    command=f"/bin/bash -c {path_to_shim}",
-    minute="*/5"
-)
+for status in ["staged", "seeding", "trash"]:
+    iso_dir = deployment_root / "var" / "ios" / status
+    files.directory(
+        name=f"Ensure the directory {iso_dir} exists",
+        path=iso_dir,
+    )
