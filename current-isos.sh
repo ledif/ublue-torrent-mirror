@@ -12,6 +12,18 @@ urls=(
   "https://dl.getaurora.dev/aurora-dx-hwe-nvidia-open-latest.iso"
   "https://dl.getaurora.dev/aurora-hwe-nvidia-latest.iso"
   "https://dl.getaurora.dev/aurora-dx-hwe-nvidia-latest.iso"
+  "https://download.projectbluefin.io/bluefin-stable.iso"
+  "https://download.projectbluefin.io/bluefin-dx-stable.iso"
+  "https://download.projectbluefin.io/bluefin-nvidia-open-stable.iso"
+  "https://download.projectbluefin.io/bluefin-dx-nvidia-open-stable.iso"
+  "https://download.projectbluefin.io/bluefin-nvidia-stable.iso"
+  "https://download.projectbluefin.io/bluefin-dx-nvidia-stable.iso"
+  "https://download.projectbluefin.io/bluefin-hwe-latest.iso"
+  "https://download.projectbluefin.io/bluefin-dx-hwe-latest.iso"
+  "https://download.projectbluefin.io/bluefin-hwe-nvidia-open-latest.iso"
+  "https://download.projectbluefin.io/bluefin-dx-hwe-nvidia-open-latest.iso"
+  "https://download.projectbluefin.io/bluefin-hwe-nvidia-latest.iso"
+  "https://download.projectbluefin.io/bluefin-dx-hwe-nvidia-latest.iso"
   "https://download.bazzite.gg/bazzite-stable.iso"
 )
 

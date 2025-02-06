@@ -1,5 +1,5 @@
 # Set up the Feral Hosting server
-[group('Devel')]
+##[group('Devel')]
 deploy:
   #!/bin/bash
   if [ ! -f id_ed25519_ublue_feral ]; then
@@ -10,7 +10,7 @@ deploy:
   podman build -t ublue-pyinfra .
   podman run -it --volume $PWD:/app:Z -w /app/pyinfra ublue-pyinfra pyinfra -y inventory.py deploy.py
 
-[group('Devel')]
+##[group('Devel')]
 # Copy local version of ublue-torrent-manager.py to server and run it
 update-and-trigger-torrent-manager:
   #!/bin/bash
