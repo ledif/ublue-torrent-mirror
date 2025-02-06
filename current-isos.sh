@@ -12,6 +12,7 @@ urls=(
   "https://dl.getaurora.dev/aurora-dx-hwe-nvidia-open-latest.iso"
   "https://dl.getaurora.dev/aurora-hwe-nvidia-latest.iso"
   "https://dl.getaurora.dev/aurora-dx-hwe-nvidia-latest.iso"
+  "https://download.bazzite.gg/bazzite-stable.iso"
 )
 
 for url in "${urls[@]}"; do

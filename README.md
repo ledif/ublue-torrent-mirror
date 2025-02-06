@@ -13,3 +13,7 @@ This project contains the infrastructure and code to manage torrent mirroring of
 > If your ISOs don't follow this pattern, then this script will not work.
 
 Simply add or modify lines in [`current-isos.sh`](https://github.com/ledif/ublue-torrent-mirror/blob/main/current-isos.sh) and open a PR.
+
+## Development
+
+If you are interested in how this project works or its design, please read [docs/design.md](https://github.com/ledif/ublue-torrent-mirror/blob/main/docs/design.md).
