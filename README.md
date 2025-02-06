@@ -1,6 +1,8 @@
 # Universal Blue Torrent Mirror
 
-This project contains the infrastructure and code to manage torrent mirroring of Universal Blue ISOs. For a full list of torrents, visit https://gaia.feralhosting.com/ublue.
+To download a torrent, please visit https://gaia.feralhosting.com/ublue.
+
+This project contains the infrastructure and code to manage torrent mirroring of Universal Blue ISOs. 
 
 ## How To Add/Remove ISOs
 > [!IMPORTANT] 
