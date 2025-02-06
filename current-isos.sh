@@ -18,12 +18,6 @@ urls=(
   "https://download.projectbluefin.io/bluefin-dx-nvidia-open-stable.iso"
   "https://download.projectbluefin.io/bluefin-nvidia-stable.iso"
   "https://download.projectbluefin.io/bluefin-dx-nvidia-stable.iso"
-  "https://download.projectbluefin.io/bluefin-hwe-latest.iso"
-  "https://download.projectbluefin.io/bluefin-dx-hwe-latest.iso"
-  "https://download.projectbluefin.io/bluefin-hwe-nvidia-open-latest.iso"
-  "https://download.projectbluefin.io/bluefin-dx-hwe-nvidia-open-latest.iso"
-  "https://download.projectbluefin.io/bluefin-hwe-nvidia-latest.iso"
-  "https://download.projectbluefin.io/bluefin-dx-hwe-nvidia-latest.iso"
   "https://download.bazzite.gg/bazzite-stable.iso"
 )
 
