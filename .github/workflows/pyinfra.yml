@@ -1,0 +1,21 @@
+name: Pyinfra
+on:
+  push:
+    paths:
+      - "pyinfra/**"
+  workflow_dispatch:
+
+jobs:
+  update-current-isos:
+    runs-on: ghcr.io/ledif/ublue-torrent-mirror:latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Run pyinfra
+        shell: bash
+        env:
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          just deploy-gh

@@ -10,6 +10,13 @@ deploy:
   podman build -t ublue-pyinfra .
   podman run -it --volume $PWD:/app:Z -w /app/pyinfra ublue-pyinfra pyinfra -y inventory.py deploy.py
 
+deploy-gh:
+  #!/bin/bash
+  echo "$SSH_KEY" > id_ed25519_ublue_feral
+  chmod 600 id_ed25519_ublue_feral
+  cd pyinfra
+  pyinfra -y inventory.py deploy.py
+
 ##[group('Devel')]
 # Copy local version of ublue-torrent-manager.py to server and run it
 update-and-trigger-torrent-manager:
