@@ -15,5 +15,5 @@ throttle.max_uploads.global.set = 0
 session = ~/.rtorrent/session
 
 # XMLRPC
-network.scgi.open_local = ~/rpc.socket
-execute.nothrow = chmod,770,~/rpc.socket
+network.scgi.open_local = ~/ublue-torrent-mirror/var/rpc.socket
+execute.nothrow = chmod,770,~/ublue-torrent-mirror/var/rpc.socket
