@@ -1,8 +1,10 @@
-name: Update Current ISOs
+name: Refresh Current ISOs
 on:
   push:
     paths:
-      - current-isos.txt
+      - current-isos.sh
+  schedule:
+    - cron: "40 8 * * *" # 8:40 UTC every day
   workflow_call:
 
 jobs:
@@ -17,7 +19,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
-      - name: Upload current-isos.txt
+      - name: Generate and upload current-isos.txt
         shell: bash
         env:
           RCLONE_CONFIG_FERAL_TYPE: sftp
@@ -28,6 +30,9 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y rclone
+
+          bash current-isos.sh | tee current-isos.txt
+
           echo "$SSH_KEY" > id_ed25519
           chmod 600 id_ed25519
           rclone copy -v ./current-isos.txt FERAL:ublue-torrent-mirror/var
