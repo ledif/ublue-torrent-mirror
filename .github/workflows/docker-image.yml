@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
     paths:
       - Containerfile
-  workflow_trigger:
+  workflow_dispatch:
 
 jobs:
   build:

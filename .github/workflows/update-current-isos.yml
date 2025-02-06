@@ -5,7 +5,7 @@ on:
       - current-isos.sh
   schedule:
     - cron: "40 8 * * *" # 8:40 UTC every day
-  workflow_call:
+  workflow_dispatch:
 
 jobs:
   update-current-isos:
