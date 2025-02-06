@@ -13,3 +13,7 @@ throttle.max_uploads.global.set = 0
 
 # Ensure torrents are saved between sessions
 session = ~/.rtorrent/session
+
+# XMLRPC
+network.scgi.open_local = ~/rpc.socket
+execute.nothrow = chmod,770,~/rpc.socket
