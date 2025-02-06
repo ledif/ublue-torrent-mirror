@@ -15,8 +15,9 @@ for ext in ["py", "sh"]:
     )
 
 for status in ["staged", "seeding", "trash"]:
-    iso_dir = deployment_root / "var" / "isos" / status
-    files.directory(
-        name=f"Ensure the directory {iso_dir} exists",
-        path=iso_dir,
-    )
+    for iso_torrent in ["isos", "torrents"]:
+        dir = deployment_root / "var" / iso_torrent / status
+        files.directory(
+            name=f"Ensure the directory {dir} exists",
+            path=dir,
+        )

@@ -1,0 +1,8 @@
+# Default download directory (where actual ISO files exist)
+directory = ~/ublue-torrent-mirror/var/isos/seeding
+
+# Directory where new torrent files are placed
+schedule = watch_directory,5,5,load_start=~/ublue-torrent-mirror/var/torrents/seeding/*.torrent
+
+# Ensure torrents are saved between sessions
+session = ~/.rtorrent/session
