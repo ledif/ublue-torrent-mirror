@@ -1,13 +1,15 @@
 name: Pyinfra
 on:
   push:
+    branches: ["main"]
     paths:
       - "pyinfra/**"
   workflow_dispatch:
 
 jobs:
-  update-current-isos:
-    runs-on: ghcr.io/ledif/ublue-torrent-mirror:latest
+  pyinfra:
+    runs-on: ubuntu-latest
+    container: ghcr.io/ledif/ublue-torrent-mirror:latest
 
     steps:
       - name: Checkout Repo
