@@ -10,10 +10,24 @@ on:
 jobs:
   build:
     runs-on: ubuntu-24.04
+
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: docker build . --file Containerfile --tag ghcr.io/ledif/ublue-torrent-mirror:latest
+
+    - name: Log in to the Container registry
+      uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Push to GHCR
       id: push
