@@ -50,7 +50,8 @@ class ISOTorrentPair:
     def create_torrent(self):
         staged_iso_path = WellKnownDirectory.STAGED_ISO_DIR / self.iso_name
         comment = f"{self.iso_name} {self.iso_url} {self.iso_sha}"
-        torrent = Torrent(staged_iso_path, trackers=["udp://tracker.opentrackr.org:1337/announce"], comment=comment, webseeds=self.iso_url)
+        trackers=["udp://fosstorrents.com:6969/announce", "http://fosstorrents.com:6969/announce", "udp://tracker.opentrackr.org:1337/announce"]
+        torrent = Torrent(staged_iso_path, trackers=trackers, comment=comment, webseeds=self.iso_url)
         
         staged_torrent_path = WellKnownDirectory.STAGED_TORRENTS_DIR / f"{self.iso_name}.torrent"
         print(f"=== Generating pieces for {staged_torrent_path}")
