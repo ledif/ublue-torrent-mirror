@@ -24,3 +24,10 @@ update-and-trigger-torrent-manager:
   set -x
   scp -i id_ed25519_ublue_feral pyinfra/files/ublue-torrent-manager.py ublue@gaia.feralhosting.com:ublue-torrent-mirror/libexec/ublue-torrent-manager.py
   ssh -i id_ed25519_ublue_feral ublue@gaia.feralhosting.com bash -c '~/ublue-torrent-mirror/libexec/ublue-torrent-manager.sh'
+
+refresh-current-isos:
+  #!/bin/bash
+  set -euo pipefail
+  bash current-isos.sh | tee current-isos.txt
+  scp -i id_ed25519_ublue_feral current-isos.txt ublue@gaia.feralhosting.com:ublue-torrent-mirror/var
+  rm current-isos.txt
